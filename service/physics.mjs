@@ -315,6 +315,7 @@ class World extends Event {
      */
     constructor(canvas) {
         this.element = canvas;
+        this.fire("ready");
     }
 
     addActor(actor) {
@@ -342,6 +343,7 @@ class World extends Event {
             let pixels = a.render();
             // Set this.pixels array based on pixels, according to position and size
         }
+        this.fire("render")
     }
 
     update() {
